@@ -1,0 +1,106 @@
+body {
+    font-family: 'Indie Flower', cursive;
+    background: linear-gradient(135deg, #fcfcac, #ffd09c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+h1 { /* Removed the extra closing curly brace here */
+    text-align: center;
+    color: #e7211c;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    background-color: #d6f4ff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.input-area, .draw-area {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fc5580;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #8a6651;
+    border-radius: 8px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #ff69b4;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8c5f4a;
+}
+
+ul#listaNombres {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+ul#listaNombres li {
+    background-color: #d4f4fc;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.picked-name-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.picked-name-container .round-bg {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 30px;
+    height: 30px;
+    background-color: #d6f4ff;
+    border: 2px solid #8a6651;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+#nombreSorteado {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    color: #d6f4ff;
+    padding: 10px;
+    background-color: #d6f4ff;
+    border-radius: 8px;
+}
+
+.error-message {
+    color: red;
+    display: block;
+    margin-top: 10px;
+}
