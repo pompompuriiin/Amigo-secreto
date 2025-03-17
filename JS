@@ -1,0 +1,44 @@
+
+// script.js
+console.log("JavaScript desde archivo externo");
+
+function agregarNombre() {
+    const nombreInput = document.getElementById('nombre');
+    const listaNombres = document.getElementById('listaNombres');
+    const mensajeError = document.getElementById('mensajeError');
+    const nombre = nombreInput.value.trim();
+
+    if (nombre === '') {
+        mensajeError.textContent = 'Por favor, ingresa un nombre.';
+        return;
+    }
+
+    const nuevoNombre = document.createElement('li');
+    nuevoNombre.textContent = nombre;
+    listaNombres.appendChild(nuevoNombre);
+
+    nombreInput.value = '';
+    mensajeError.textContent = '';
+}
+
+function realizarSorteo() {
+    const listaNombres = document.getElementById('listaNombres').getElementsByTagName('li');
+    const nombreSorteado = document.getElementById('nombreSorteado');
+    const mensajeError = document.getElementById('mensajeError');
+
+    if (listaNombres.length < 4) {
+        mensajeError.textContent = 'Debes ingresar al menos 4 nombres para realizar el sorteo.';
+        return;
+    }
+
+    const indiceAleatorio = Math.floor(Math.random() * listaNombres.length);
+    const nombreSeleccionado = listaNombres[indiceAleatorio].textContent;
+
+    nombreSorteado.textContent = 'Nombre sorteado: ' + nombreSeleccionado;
+    mensajeError.textContent = '';
+}
+
+function refreshPage() {
+    document.getElementById('listaNombres').innerHTML = ''; // Clear list
+    window.location.reload();
+}
